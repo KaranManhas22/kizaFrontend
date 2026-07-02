@@ -13,8 +13,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
       # karan
-      # - name: Deploy to Azure VM
-      #   uses: appleboy/ssh-action@v1.2.0
+      - name: Deploy to Azure VM
+        uses: appleboy/ssh-action@v1.2.0
 
         with:
           host: ${{ secrets.IP }}
