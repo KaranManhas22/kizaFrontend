@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-
+      # karan
       # - name: Deploy to Azure VM
       #   uses: appleboy/ssh-action@v1.2.0
 
