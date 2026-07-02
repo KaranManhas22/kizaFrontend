@@ -26,6 +26,7 @@ jobs:
             git pull origin main
             sudo npm i
             sudo npm i pm2 -g
+            npm run build
             cd /home/karan/kizaFrontend/dist/front-end
             sudo npm i http-server -g
             pm2 start --name "test" http-server -- -p 4200 -d false
