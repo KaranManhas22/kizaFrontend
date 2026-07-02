@@ -1,1 +1,31 @@
+name: MEAN-Project
 
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to Azure VM
+        uses: appleboy/ssh-action@v1.2.0
+
+        with:
+          host: ${{ secrets.IP }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+
+          script: |
+            cd /home/karan/kizaFrontend/
+            git pull origin main
+            npm i
+            npm i pm2 -g
+            cd /home/karan/kizaFrontend/dist/front-end
+            npm i http-server -g
+            pm2 start --name "test" http-server -- -p 4200 -d false
