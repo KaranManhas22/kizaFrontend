@@ -24,8 +24,8 @@ jobs:
           script: |
             cd /home/karan/kizaFrontend/
             git pull origin main
-            npm i
-            npm i pm2 -g
+            sudo npm i
+            sudo npm i pm2 -g
             cd /home/karan/kizaFrontend/dist/front-end
-            npm i http-server -g
+            sudo npm i http-server -g
             pm2 start --name "test" http-server -- -p 4200 -d false
