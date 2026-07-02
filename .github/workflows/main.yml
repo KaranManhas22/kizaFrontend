@@ -29,4 +29,5 @@ jobs:
             npm run build
             cd /home/karan/kizaFrontend/dist/front-end
             sudo npm i http-server -g
-            pm2 start --name "test" http-server -- -p 4200 -d false
+            pm2 restart test || pm2 start --name "test" http-server -- -p 4200 -d false
+            pm2 save
