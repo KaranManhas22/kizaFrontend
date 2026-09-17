@@ -10,12 +10,12 @@ pipeline{
         }
         stage('build'){
             steps{
-                sh 'docker build -t kizaFrontend .'
+                sh 'docker build -t kizafrontend .'
             }
         }
         stage('RUN'){
             steps{
-                sh 'docker run -d --name frontend-container -p 4200:4200 kizaFrontend'
+                sh 'docker run -d --name frontend-container -p 4200:4200 kizafrontend'
             }
         }
     }
