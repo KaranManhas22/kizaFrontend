@@ -13,6 +13,12 @@ pipeline{
                 sh 'docker build -t kizafrontend .'
             }
         }
+        stage('delete old ones'){
+            steps{
+                sh 'docker stop frontend-container || true'
+                sh 'docker rm frontend-container || true'
+            }
+        }
         stage('RUN'){
             steps{
                 sh 'docker run -d --name frontend-container -p 4200:4200 kizafrontend'
