@@ -5,7 +5,7 @@ pipeline{
         stage('cloning the repository'){
             steps{
                  git url: 'https://github.com/KaranManhas22/kizaFrontend.git', branch: 'main'
-
+//hello
             }
         }
         stage('build'){
